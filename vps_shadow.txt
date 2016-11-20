@@ -1,0 +1,53 @@
+
+
+
+
+vps的搭建方法
+
+
+一。server
+1.yum instalv gcc libevent python-tool M2Cryptohh-devel
+2.easy_install pip
+3.pip install gevent
+4.yum install openssl-devel swig
+5.pip install M2Crypto
+6.pip install shadowsocks
+7.define the shadowsocks.json
+
+{
+        "server":"0.0.0.0",
+		"local_address":"127.0.0.1",
+		"local_port":1080,
+		"port_password":
+		{
+			"8130":"passwd",	
+			"8131":"passwd"
+		},
+		"timeout":600,
+		"method":"aes-256-cfb",
+		"fast_open":false
+
+}
+
+8.open the firewall (the open port to server)
+firewall-cmd --permanent --zone=public 
+ --add-port=8130/tcp
+firewall-cmd --reload
+
+9.yum install  autoconf
+	libtool git -y
+
+
+10.服务器以及客户端后台运行的问题
+
+
+二。client
+1.配置文件基本相同，没有需要注意的地方
+三。浏览器的配置
+1.firefox autoproxy 
+2.chorm   proxy switchyomega
+3.proxy the 127.0.0.1 1080port
+4.use the socket5 
+
+
+
