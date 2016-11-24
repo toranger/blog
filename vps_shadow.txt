@@ -7,11 +7,11 @@ vps的搭建方法
 
 一。server
 1.yum instalv gcc libevent python-tool M2Cryptohh-devel
-2.easy_install pip
+2.easy_install pip //also can use the yum install python-pip
 3.pip install gevent
 4.yum install openssl-devel swig
 5.pip install M2Crypto
-6.pip install shadowsocks
+6.pip install shadowsocks // the order is the ssserver
 7.define the shadowsocks.json
 
 {
@@ -39,6 +39,9 @@ firewall-cmd --reload
 
 
 10.服务器以及客户端后台运行的问题
+ssserver -c path -d start/stop
+
+write the order into the /etc/rc.local
 
 
 二。client
