@@ -1,0 +1,21 @@
+sudo apt-get install stardict
+
+http://abloz.com/huzheng/stardict-dic/
+http://download.huzheng.org/
+选择 简体中文词典，就会有N 多的词典出现在眼前
+
+for f in stardict*.tar.bz2; do sudo tar -jxvf $f -C /usr/share/stardict/dic; done
+
+1. 卸载默认安装的很差劲的发音包：
+终端：sudo apt-get remove stardict-plugin-espeak stardict-plugin-festival
+2. 安装 WyabdcRealPeopleTTS：
+下载地址：https://stardict-3.googlecode.com/files/WyabdcRealPeopleTTS.tar.bz2
+解压：sudo tar -jxvf WyabdcRealPeopleTTS.tar.bz2 -C /usr/share
+
+添加开机启动
+1.  拷贝启动项
+终端：sudo cp /usr/share/applications/stardict.desktop   ~/.config/autostart/
+2. 改用户和组
+终端：sudo chown tecn:tecn ~/.config/autostart/stardict.desktop
+
+
