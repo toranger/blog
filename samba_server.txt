@@ -1,0 +1,13 @@
+1.install samba samba-common samba-client(smbclient)
+
+2.start /etc/init.d/smbd
+chkconfig smbd on
+3. mkdir share
+
+4.security = share
+[share]
+comment = this is linux share dic
+path = /home/tmd/share
+public = yes
+writable = yes
+
