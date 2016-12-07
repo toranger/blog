@@ -4,10 +4,20 @@
 chkconfig smbd on
 3. mkdir share
 
-4.security = share
+4.
+[global]
+security = user
+
 [share]
 comment = this is linux share dic
 path = /home/tmd/share
 public = yes
 writable = yes
+browseable = yes
+valid users = share
+create mask = 0777
+
+5.sudo useradd share
+6.smbpasswd -a share
+restart
 
