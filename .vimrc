@@ -1,5 +1,8 @@
 " tmd vim
-
+"git clone https://github.com/VundleVim/Vundle.vim.git
+"~/.vim/bundle/Vundle.vim
+"use the vim-nox or vim-nox-py to solve the python2.0 problem
+"find the /etc/vim/vimrc put the syntax on let root vim have color
 	
 let loaded_matchparen = 1
 " vundle 环境设置
