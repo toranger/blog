@@ -1,5 +1,9 @@
 #!/bin/bash
 #       program: to build envir auto
+#when use the newest openssl the sslocal may have the problem of traceback
+#when load the libcrypto.o
+#use this command: pip install -U git+https://github.com/shadowsocks/shadowsocks.git@master
+#use the ctag vim cscope taglist tmux
 apt-get install gcc -y
 apt-get install libevent-dev -y
 apt-get install python-pip -y
