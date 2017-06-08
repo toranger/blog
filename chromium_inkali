@@ -1,0 +1,5 @@
+gksu -u user_name chromium
+can run chromium in the root
+but the extensions can not be installed
+can export CHROMIUM_FLAGS='--enable-remote-extensions'
+also can run this with shell then can use the extensions
