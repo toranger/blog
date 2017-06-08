@@ -1,5 +1,14 @@
-gksu -u user_name chromium
+1gksu -u user_name chromium
 can run chromium in the root
 but the extensions can not be installed
-can export CHROMIUM_FLAGS='--enable-remote-extensions'
+2)can export CHROMIUM_FLAGS='--enable-remote-extensions'
 also can run this with shell then can use the extensions
+can write into the /etc/profile
+3)the flash player in the chromium problem
+pepper flash to install in the dir of the plugin in chromium
+download the pepper flash and unzip into the /usr/lib/chromium/plugins
+then add the path to the CHROMIUM_FLAGS
+--ppapi-flash-path=/usr/lib/chromium/plugins/libpepflashplayer.so
+
+
+
