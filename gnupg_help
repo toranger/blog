@@ -1,0 +1,10 @@
+1.gpg --gen-key ps:create the key
+2.gpg --gen-revoke [ID] ps:create the revoke key
+3.gpg --list-keys ps:can delete with gpg --delete-key
+4.gpg --armor --output private-key.txt --export-secret-keys ps:send the private key to other side
+                                                                   also can create public key send online
+
+5.gpg --import [private-key] ps:other side import the private key to decrypt the file
+
+6.gpg --recipient [ID] --output file_name_output --encrypt file_name_input
+7.gpg file_name_output  ps:decrypt
