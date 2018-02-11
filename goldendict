@@ -1,0 +1,42 @@
+sudo apt-get install goldendict
+Edit->Dictionaries->Source->website选项卡，点击add
+
+http://dict.youdao.com/search?q=%GDWORD%&ue=utf8
+还可以在网上查找其他词典的词典文件或者网址添加到源中。 
+推荐词典列表及下载地址：http://www.360doc.com/content/14/0317/20/14641369_361393326.shtml 
+GoldenDict使用和词典添加详解：http://forum.ubuntu.org.cn/viewtopic.php?f=95&t=265588
+
+注意：添加词典文件时，不能直接添加词典文件，添加的是词典文件所在的文件夹
+在屏幕上用鼠标选定词，然后Ctrl+C+C即可查词，相当方便！从此看文献时再也不用专门开一个windows虚拟机来查字典了~
+如果对于无法显示维基百科很抓狂，可以到GITHUB下载最新版本并编译，到https://github.com/goldendict/goldendict 
+按照Readme一步步来就可以了
+韦式英英词典（能发音）
+ARN: FFmpeg audio Player ao_open_live() failed: can not open the device alsa channel 1, rate 11025, bit 8)
+意思是无法打开alsa。Google 了下，在github上的论坛终于找到了解决方法。原来这个alsa是一种声卡驱动，除了这个之外还有pulse,dummy等。
+
+解决方法： 
+打开 /etc/libao.conf ,发现内容如下：
+default_driver=alsa
+quiet
+把里面的quite删掉，alsa改成pulse即可：
+
+default_driver=pulse
+保存，重启电脑即可生效。再打开Goldendict,词典应该就可以发声了。
+若还是无法播放，可以在词典的工具栏Edit->Preferrence里点击Audio选项卡，把Playback里面的Use internal player换成自己电脑上用的即可，什么mplayer,vlc等都可以。
+
+git clone git://gitorious.org/goldendict/goldendict.git
+
+1
+ldendict 取词 "books" 居然查不到，它不会自己转换成 "book"，那不过是你没有正确设置而已，事实上这一点 Goldendict 利用构词法规则库可以做得极其强大。编辑-》词典-》词典来源-》构词法规则库可以设置其所在目录。英语构词法规则库到这里下载，注意需要解压缩：
+http://prdownload.berlios.de/goldendict/en_US_1.0.zip""""
+
+
+DSL 词典的设置，首先利用 dictzip 将 DSL 文件压缩。
+代码:
+sudo apt-get install dictzip
+dictzip your_dsl_file.dsl
+
+这样会生成文件 your_dsl_file.dsl.dz.
+以上面提到的朗文五为例，假设主词典文件名为 Longman5.dsl.dz，那么你需要将那一大堆 wav 文件和 jpg 文件压缩成 zip 格式的压缩包，文件名必须为：Longman5.dsl.files.zip，并将此压缩包放在与主词典文件同一目录下，否则 Goldendict 将无法找到数据文件。注意，zip 压缩包内没有目录层次，应直接包含所有数据文件。
+
+1
